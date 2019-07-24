@@ -1,0 +1,44 @@
+import React, { Component } from 'react';
+import { Image, Alert, StyleSheet, Text, TouchableOpacity, Button, View } from 'react-native';
+
+export default class SignupScreen extends Component {
+
+render() {
+const { navigate } = this.props.navigation;
+  return (
+  <View style={styles.container}>
+      <Image
+      style={{ marginTop: 90, width: 200, height: 200, resizeMode: "contain"}}
+      source={require('./components/Logo.png')}
+      />
+      <View style={styles.bottom}>
+      <TouchableOpacity onPress= {() => navigate('SignupScreen')}>
+        <View style={{ marginRight: 15, borderRadius: 120, width: 150, height:150, backgroundColor: "skyblue" }}>
+          <Text style={{ marginTop:60, marginLeft:20, marginRight:20, textAlign:'center', color:'white',fontSize:20}}>Facebook</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigate('SignupScreen')}>
+        <View style={{ marginLeft: 15, borderRadius: 120, width:150, height:150, backgroundColor: "grey" }}>
+          <Text style={{marginTop:60, marginLeft:20, marginRight:20, textAlign:'center', color:'black',fontSize:20}}>Google</Text>
+        </View>
+      </TouchableOpacity>
+      </View>
+    </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+
+  bottom: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginBottom: 180,
+  },
+
+});
